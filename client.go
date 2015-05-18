@@ -172,7 +172,7 @@ func NewClient(options ...ClientOptionFunc) (*Client, error) {
 		scheme:                    DefaultScheme,
 		decoder:                   &DefaultDecoder{},
 		maxRetries:                DefaultMaxRetries,
-		mu:                        make(sync.RWMutex),
+		mu:                        sync.RWMutex{},
 		healthcheckEnabled:        DefaultHealthcheckEnabled,
 		healthcheckTimeoutStartup: DefaultHealthcheckTimeoutStartup,
 		healthcheckTimeout:        DefaultHealthcheckTimeout,
